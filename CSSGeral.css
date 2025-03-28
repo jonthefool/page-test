@@ -1,0 +1,751 @@
+/* styles.css - Arquivo unificado de estilos para DataReef */
+
+/* Importações de fontes */
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
+@import url('https://fonts.googleapis.com/css2?family=Black+Mango&display=swap');
+
+/* Variáveis globais */
+:root {
+    --text-color: #fff;
+    --shadow-color: hsla(210, 40%, 52%, .4);
+    --btn-color: #ff6600;
+    --bg-color: #000;
+}
+
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #111;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Black Mango', sans-serif;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--btn-color);
+}
+
+.search-bar {
+    background: none;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 8px 15px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+    border-color: var(--btn-color);
+    outline: none;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding: 0 10%;
+    overflow: hidden;
+}
+
+.hero-left {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-left h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero-right {
+    flex: .5;
+    background-color: #111;
+    padding: 40px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-right p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+/* Sobre Section */
+.sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+}
+
+.grupo-imagem {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeInZoom 2s ease-out forwards;
+}
+
+.sobre-texto {
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.sobre-texto h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.sobre-texto p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Botões */
+button {
+    background-color: var(--btn-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #e65c00;
+}
+
+/* Botão de vidro */
+.glass-button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 14px;
+    border: none;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    z-index: 15;
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 10px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.glass-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Adicione isso no final do arquivo CSS */
+
+/* Botões de autenticação */
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.auth-button {
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-family: 'Black Mango', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-button {
+    background-color: transparent;
+    border: 1px solid var(--btn-color);
+    color: var(--btn-color);
+}
+
+.register-button {
+    background-color: var(--btn-color);
+    border: 1px solid var(--btn-color);
+    color: white;
+}
+
+.login-button:hover {
+    background-color: rgba(255, 102, 0, 0.1);
+}
+
+.register-button:hover {
+    background-color: #e65c00;
+    border-color: #e65c00;
+}
+
+/* Mensagem de boas-vindas */
+.welcome-message {
+    color: var(--btn-color);
+    font-family: 'Black Mango', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logout-button {
+    color: #ccc;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logout-button:hover {
+    color: var(--btn-color);
+}
+
+/* CORREÇÕES GERAIS */
+body {
+    background-color: var(--bg-color) !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-color: #111;
+    color: var(--text-color);
+    padding: 20px;
+    text-align: center;
+    z-index: 10; /* Garante que fique acima de elementos posicionados */
+}
+
+
+/* ===== FORMULÁRIO MODERNIZADO ===== */
+.formulario-contato {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 40px;
+    background-color: #111;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 102, 0, 0.2);
+}
+
+.formulario-contato h2 {
+    color: var(--btn-color);
+    font-family: 'Black Mango', sans-serif;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.formulario-contato form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.formulario-contato input,
+.formulario-contato select,
+.formulario-contato textarea {
+    background: #222;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 14px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.formulario-contato input:focus,
+.formulario-contato select:focus,
+.formulario-contato textarea:focus {
+    border-color: var(--btn-color);
+    outline: none;
+    box-shadow: 0 0 12px rgba(255, 102, 0, 0.2);
+}
+
+.formulario-contato textarea {
+    grid-column: 1 / -1;
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* Botão Centralizado */
+.formulario-contato button[type="submit"] {
+    grid-column: 1 / -1;
+    width: 60%;
+    margin: 0 auto;
+    padding: 16px;
+    background: var(--btn-color);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Black Mango', sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.formulario-contato button[type="submit"]:hover {
+    transform: scale(1.05);
+}
+
+/* ===== FORMULÁRIO ANIMADO ===== */
+.form-transition, 
+.question label,
+.question input[type="text"],
+.question input[type="email"], 
+.question input[type="tel"],
+.question select,
+.form-button {
+  transition: all 0.25s cubic-bezier(.53,.01,.35,1.5);
+}
+
+.form-container {
+  position: relative;
+  max-width: 700px;
+  min-width: 300px;
+  padding: 40px;
+  background-color: #111;
+  border-radius: 20px;
+  margin: 40px auto;
+  border: 1px solid rgba(255, 102, 0, 0.3);
+}
+
+.question {
+  position: relative;
+  padding: 20px 0;
+}
+
+.question label {
+  transform-origin: left center;
+  color: var(--btn-color);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  font-size: 16px;
+  padding: 10px 15px;
+  display: block;
+  position: absolute;
+  margin-top: -40px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.question input[type="text"],
+.question input[type="email"],
+.question input[type="tel"],
+.question select {
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid var(--btn-color);
+  font-size: 16px;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 30px;
+  color: var(--text-color);
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+.question select {
+  background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff6600'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e") no-repeat;
+  background-position: right 15px center;
+  background-size: 20px;
+}
+
+.question input:focus,
+.question select:focus {
+  outline: none;
+  background-color: rgba(255, 102, 0, 0.1);
+  border-width: 2px;
+}
+
+.question input:focus ~ label,
+.question input:valid ~ label,
+.question select:focus ~ label,
+.question select:valid ~ label {
+  transform: translate(0, -40px);
+  font-size: 14px;
+  color: var(--text-color);
+  background-color: #111;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+
+/* Botão Estilizado */
+.form-button {
+  margin-top: 30px;
+  background-color: var(--btn-color);
+  border: none;
+  font-size: 16px;
+  padding: 15px 30px;
+  border-radius: 30px;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #e65c00;
+  transform: translateY(-3px);
+}
+
+/* Estilos para o gerenciador de dashboards */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dashboard-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+.btn-edit {
+    background-color: #4CAF50 !important;
+}
+
+.btn-delete {
+    background-color: #f44336 !important;
+}
+
+.btn-edit:hover {
+    background-color: #3e8e41 !important;
+}
+
+.btn-delete:hover {
+    background-color: #d32f2f !important;
+}
+
+/* ===== DASHBOARD STYLES ===== */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+/* Aumentar o container dos gráficos */
+.grafico-card {
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+/* Aumentar a altura dos canvases */
+.grafico-card canvas {
+    height: 400px !important;
+    width: 100% !important;
+}
+
+/* Ajustar o container principal */
+.dashboard-container {
+    max-width: 1400px;
+    padding: 30px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.metric-card {
+    background: linear-gradient(135deg, #1e1e1e 0%, #111 100%);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--btn-color);
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    color: var(--btn-color);
+    margin: 10px 0;
+}
+
+.metric-diff {
+    font-size: 0.9rem;
+}
+
+.metric-diff.positive {
+    color: #4CAF50;
+}
+
+.metric-diff.negative {
+    color: #f44336;
+}
+
+/* Estilos para o gerenciador de dashboards */
+.dashboard-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.dashboard-card {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 102, 0, 0.2);
+}
+
+.dashboard-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.chart-container {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    margin: 15px 0;
+}
+
+/* Formulário de criação de dashboard */
+.dado-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.dado-item input[type="text"],
+.dado-item input[type="number"] {
+    background: #222;
+    border: 1px solid #333;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.color-picker {
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+/* Tela de visualização em tela cheia */
+#fullscreen-container {
+    width: 95vw;
+    height: 90vh;
+    margin: 20px auto;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 102, 0, 0.2);
+}
+
+/* Dashboard Manager específico */
+.dashboard-manager-container {
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 30px;
+}
+
+.dashboard-card {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-card canvas {
+    flex-grow: 1;
+    min-height: 300px;
+}
+
+.dashboard-actions {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.create-form {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 102, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--btn-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    background: #222;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 4px;
+}
+
+.dado-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.dado-item input[type="color"] {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+}
+
+.add-btn, .submit-btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add-btn {
+    background: rgba(255, 102, 0, 0.1);
+    border: 1px solid var(--btn-color);
+    color: white;
+}
+
+.submit-btn {
+    background: var(--btn-color);
+    border: none;
+    color: white;
+    margin-top: 15px;
+}
+
+.remove-btn {
+    background: #f44336;
+    border: none;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
